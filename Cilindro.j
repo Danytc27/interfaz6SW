@@ -32,6 +32,21 @@
 
 .method area()F
     ; agregar las sentecias para hacer el metodo area()F
+    ; Calcular el área de la base del cilindro (círculo)
+    aload_0
+    invokespecial Circulo/area()F 
+    ; Calcular el área lateral del cilindro
+    aload_0
+    getfield Cilindro/radio F
+    aload_0
+    getfield Cilindro/altura F
+    fmul
+    ldc 3.14159265   ; Carga el valor de pi
+    fmul             ; Multiplica por el radio
+    fmul             ; Multiplica por la altura
+    ; Sumar las áreas de la base y lateral del cilindro
+    fadd
+    freturn          ; Devuelve el resultado
 .end method
 
 
